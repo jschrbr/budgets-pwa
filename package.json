@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "webpack": "webpack",
-    "prestart": "npm run webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
