@@ -8,6 +8,10 @@
     content="width=device-width, initial-scale=1.0"
   >
   <meta
+    name="description"
+    content="A simple noSQL PWA example"
+  >
+  <meta
     http-equiv="X-UA-Compatible"
     content="ie=edge"
   >
@@ -15,11 +19,14 @@
     name="theme-color"
     content="#317EFB"
   >
+
   <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel='stylesheet'
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?display=swap"
   >
+
   <link
+    async
     rel="stylesheet"
     href="styles.css"
   >
@@ -56,20 +63,33 @@
     </div>
 
     <div class="form">
-      <input
-        type="text"
-        id="t-name"
-        placeholder="Name of transaction"
-      />
-      <input
-        type="number"
-        min="0"
-        id="t-amount"
-        placeholder="Transaction amount"
-      />
+      <div class="input-container">
+        <input
+          type="text"
+          id="t-name"
+          aria-label="transaction name input"
+          placeholder="Name of transaction"
+        />
+      </div>
+      <div class="input-container">
+        <input
+          type="number"
+          min="0"
+          id="t-amount"
+          aria-label="transaction amount input"
+          placeholder="Transaction amount"
+        />
+      </div>
       <div class="container">
-        <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
-        <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
+        <div class="input-container">
+          <button id="add-btn">
+            <i class="fa fa-fw fa-plus buttons"></i> Add Funds
+          </button>
+        </div>
+        <div class="input-container">
+          <button id="sub-btn"><i class="fa fa-fw fa-minus"></i> Subtract Funds</button>
+
+        </div>
       </div>
       <p class="error"></p>
     </div>
@@ -97,8 +117,14 @@
         .then(function () { console.log("Service Worker Registered"); });
     }
   </script>
-  <script src="index.js"></script>
-  <script src="db.js"></script>
+  <script
+    async
+    src="index.js"
+  ></script>
+  <script
+    defer
+    src="db.js"
+  ></script>
 </body>
 
 </html>

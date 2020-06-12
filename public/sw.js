@@ -36,10 +36,10 @@ self.addEventListener("activate", (event) => {
       .then(() => self.clients.claim())
   );
 
-  event.registerForeignFetch({
-    scopes: ["/"],
-    origins: ["*"], // or simply '*' to allow all origins
-  });
+  // event.registerForeignFetch({
+  //   scopes: ["/"],
+  //   origins: ["*"], // or simply '*' to allow all origins
+  // });
 });
 
 self.addEventListener("fetch", (event) => {

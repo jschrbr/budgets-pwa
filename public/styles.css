@@ -1,9 +1,18 @@
+@font-face {
+  font-family: "FontAwesome-swap";
+  font-display: swap;
+  src: local("FontAwesome"),
+    url(https:////maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0)
+      format("woff2");
+}
+
 body {
   font-size: 120%;
   font-family: Arial;
 }
 
-button, input {
+button,
+input {
   font-size: 100%;
   font-family: Arial;
 }
@@ -12,7 +21,8 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -48,4 +58,14 @@ tr:nth-child(even) {
   overflow: auto;
   width: 90%;
   margin: 0 auto;
+}
+
+.container {
+  padding: 24px;
+}
+
+.input-container {
+  display: inline-block;
+  /* margin-top: 48px; */
+  padding: 24px 48px 0px 48px;
 }
