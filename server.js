@@ -24,9 +24,13 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
 // routes
 app.use(require("./routes/api.js"));
 
-app.get("*", function (req, res) {
-  res.redirect("https://" + req.headers.host + req.url);
-});
+if (process.env.NODE_ENV === "production") {
+  app.use((req, res, next) => {
+    if (req.header("x-forwarded-proto") !== "https")
+      res.redirect(`https://${req.header("host")}${req.url}`);
+    else next();
+  });
+}
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
