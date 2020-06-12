@@ -38,7 +38,7 @@
 
   <link
     rel="preload"
-    href="styles.css"
+    href="assets/css/styles.css"
     as='style'
     onload="this.rel='stylesheet'"
   >
@@ -46,19 +46,19 @@
   <link
     rel="apple-touch-icon"
     sizes="180x180"
-    href="icons/apple-touch-icon.png"
+    href="assets/icons/apple-touch-icon.png"
   >
   <link
     rel="icon"
     type="image/png"
     sizes="32x32"
-    href="icons/favicon-32x32.png"
+    href="assets/icons/favicon-32x32.png"
   >
   <link
     rel="icon"
     type="image/png"
     sizes="16x16"
-    href="icons/favicon-16x16.png"
+    href="assets/icons/favicon-16x16.png"
   >
   <link
     rel="manifest"
@@ -123,18 +123,13 @@
 
     <canvas id="myChart"></canvas>
   </div>
-
-
-  <script defer>
-    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
-  </script>
   <script
     defer
-    src="index.js"
+    src="dist/app.bundle.js"
   ></script>
   <script
     defer
-    src="db.js"
+    src="dist/db.bundle.js"
   ></script>
 </body>
 

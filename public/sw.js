@@ -1,4 +1,9 @@
-const FILES_TO_CACHE = ["/", "/index.html", "/index.js", "/db.js"];
+const FILES_TO_CACHE = [
+  "/",
+  "/index.html",
+  "/dist/app.bundle.js",
+  "/dist/db.bundle.js",
+];
 
 const STATIC_CACHE = "static-cache-v1";
 const RUNTIME_CACHE = "runtime-cache";
