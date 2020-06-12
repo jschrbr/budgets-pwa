@@ -1,5 +1,5 @@
 if ("serviceWorker" in navigator)
-  navigator.serviceWorker.register("/dist/service-worker.js");
+  navigator.serviceWorker.register("/service-worker.js");
 
 let transactions = [];
 let myChart;
