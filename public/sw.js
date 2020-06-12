@@ -1,5 +1,3 @@
-console.log("Hello from service worker!");
-
 const FILES_TO_CACHE = ["/", "/index.html", "/index.js", "/db.js"];
 
 const STATIC_CACHE = "static-cache-v1";

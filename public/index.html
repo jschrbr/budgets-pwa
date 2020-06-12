@@ -21,14 +21,26 @@
   >
 
   <link
-    rel='stylesheet'
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?display=swap"
+    rel="preload"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    as='style'
+    onload="this.rel='stylesheet'"
   >
 
   <link
-    async
-    rel="stylesheet"
+    rel="preload"
+    as="font"
+    type="font/woff2"
+    crossorigin
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0"
+  />
+
+
+  <link
+    rel="preload"
     href="styles.css"
+    as='style'
+    onload="this.rel='stylesheet'"
   >
 
   <link
@@ -52,7 +64,10 @@
     rel="manifest"
     href="/site.webmanifest"
   >
-
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"
+  ></script>
   <title>Budget Tracker</title>
 </head>
 
@@ -83,11 +98,11 @@
       <div class="container">
         <div class="input-container">
           <button id="add-btn">
-            <i class="fa fa-fw fa-plus buttons"></i> Add Funds
+            <i class="fa fa-plus buttons"></i> Add Funds
           </button>
         </div>
         <div class="input-container">
-          <button id="sub-btn"><i class="fa fa-fw fa-minus"></i> Subtract Funds</button>
+          <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
 
         </div>
       </div>
@@ -109,16 +124,12 @@
     <canvas id="myChart"></canvas>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then(function () { console.log("Service Worker Registered"); });
-    }
+
+  <script defer>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
   </script>
   <script
-    async
+    defer
     src="index.js"
   ></script>
   <script
