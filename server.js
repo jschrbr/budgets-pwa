@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-app.use(logger("dev"));
+// app.use(logger("dev"));
 
 app.use(compression());
 app.use(express.urlencoded({ extended: true }));
@@ -22,13 +22,16 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
 });
 
 // routes
+
 app.use(require("./routes/api.js"));
 
 if (process.env.NODE_ENV === "production") {
   app.use((req, res, next) => {
-    if (req.header("x-forwarded-proto") !== "https")
-      res.redirect(`https://${req.header("host")}${req.url}`);
-    else next();
+    if (req.secure) {
+      next();
+      return;
+    }
+    res.redirect(`https://${req.headers.host + req.url}`);
   });
 }
 
