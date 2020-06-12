@@ -1,0 +1,4 @@
+#!/bin/sh
+
+CSS_PATH=$PWD/public/assets/css
+minify $CSS_PATH/styles.css > $CSS_PATH/styles.min.css

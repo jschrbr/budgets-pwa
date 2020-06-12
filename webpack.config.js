@@ -1,5 +1,7 @@
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const ServiceWorkerWebpackPlugin = require("serviceworker-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const path = require("path");
 
 const config = {

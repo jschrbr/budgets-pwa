@@ -19,7 +19,7 @@
 ### ✨ [Demo](https://budgets-pwa.herokuapp.com/)
 
 > <div align="center">
-> <img  width="60%" src="./Budget Tracker.gif">
+> <img  width="60%" src="./utils/Budget Tracker.gif">
 > </div>
 
 ## Install
